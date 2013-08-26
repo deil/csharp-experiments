@@ -21,14 +21,18 @@ namespace Test
         public static void Test()
         {
             var arrayOfValues = new[] {1, 2, 3, 4};
-            var actions = new List<Action>();
             foreach (var i in arrayOfValues)
             {
-                var j = i;
-                actions.Add(() => Console.WriteLine(j));
-            }
+                ThreadPool.QueueUserWorkItem(state =>
+                                                 {
+                                                     Console.WriteLine("Thread id {0}, value {1}", Thread.CurrentThread.ManagedThreadId, i);
+                                                     Thread.Sleep(1000);
+                                                     Console.WriteLine("Thread id {0} again, value {1}", Thread.CurrentThread.ManagedThreadId, i);
+                                                 }
+                    );
 
-            actions.ForEach(a => a());
+                Thread.Sleep(500);
+            }
 
             Console.WriteLine("Main thread is done.");
         }

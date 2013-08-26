@@ -17,7 +17,7 @@ namespace Test
         private int b;
     }
 
-    public struct MyStruct2 : IEquatable<MyStruct2>
+    public struct MyStruct2
     {
         public MyStruct2(int a, int b)
         {
@@ -25,14 +25,38 @@ namespace Test
             this.b = b;
         }
 
-        public bool Equals(MyStruct2 other)
+        public override bool Equals(object other)
         {
-            return a == other.a && b == other.b;
+            if (other == null)
+                return false;
+
+            if (!(other is MyStruct2))
+                return false;
+
+            var otherStruct = (MyStruct2) other;
+            return a == otherStruct.a && b == otherStruct.b;
         }
 
         private int a;
         private int b;
     }
+
+public struct MyStruct3 : IEquatable<MyStruct3>
+{
+    public MyStruct3(int a, int b)
+    {
+        this.a = a;
+        this.b = b;
+    }
+
+    public bool Equals(MyStruct3 other)
+    {
+        return a == other.a && b == other.b;
+    }
+
+    private int a;
+    private int b;
+}
 
     public class ValueTypeEquals
     {
@@ -53,8 +77,8 @@ namespace Test
 
             start = DateTime.Now;
 
-            var s21 = new MyStruct2(1, 2);
-            var s22 = new MyStruct2(1, 2);
+            var s21 = new MyStruct3(1, 2);
+            var s22 = new MyStruct3(1, 2);
 
 
             for (var i = 0; i < 10000000; i++)
