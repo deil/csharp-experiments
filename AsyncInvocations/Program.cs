@@ -4,7 +4,7 @@ using System.Threading;
 namespace AsyncInvocations
 {
     class MainClass
-    {
+    {/*
         public delegate ExternalService.InvocationResult LongRunningMethod(int parameter);
 
         public static void Main(string[] args)
@@ -25,6 +25,6 @@ namespace AsyncInvocations
             Console.WriteLine("Attempting EndInvoke()");
             var result = method.EndInvoke(asyncResult);
             Console.WriteLine("Returned {0}", result.Status);           
-        }
+        }*/
     }
 }

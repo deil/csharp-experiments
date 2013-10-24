@@ -8,12 +8,11 @@
     <ProjectGuid>{54587279-03E3-4C71-B85B-9D2179B36423}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>@volatile</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <RootNamespace>deilycode</RootNamespace>
+    <AssemblyName>deilycode-sources</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <StartupObject>deilycode.Entry</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -52,6 +51,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticLock.cs" />
     <Compile Include="ValueTypeEquals.cs" />
+    <Compile Include="Threading\VolatileSingleton.cs" />
+    <Compile Include="Threading\ResetEvent.cs" />
+    <Compile Include="AsyncInvocations\ExternalService.cs" />
+    <Compile Include="AsyncInvocations\Program.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="AsyncInvocations\Entry.cs" />
+    <Compile Include="CLR\VirtualMemberCall\BaseClass.cs" />
+    <Compile Include="CLR\VirtualMemberCall\DerivedClass.cs" />
+    <Compile Include="CLR\VirtualMemberCall\Entry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -64,4 +73,17 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="CLR\" />
+    <Folder Include="CLR\VirtualMemberCall\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

@@ -1,26 +1,22 @@
 using System;
 using System.Threading;
 
-namespace AsyncInvocations
+namespace deilycode.AsyncInvocations
 {
-    public class ExternalService
+	sealed class ExternalService
     {
         public class InvocationResult
         {
             public int Status;
         }   
     
-        public ExternalService()
-        {
-        }
-    
         public InvocationResult LongRunningMethod(int parameter)
         {
             Console.WriteLine("I am long-running method");
-            Thread.Sleep(10000);
+			Thread.Sleep(5000);
             Console.WriteLine("Finished!");
       
-            return new ExternalService.InvocationResult { Status = parameter ^ 2 };
+			return new ExternalService.InvocationResult { Status = parameter ^ 2 };
         }    
     }
 }

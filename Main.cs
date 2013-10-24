@@ -29,7 +29,7 @@ namespace csharpexperiments
       {
       	//Generics.Experiment();
       	//VolatileSingletonTest.Experiment();
-        Finalization.Experiment();
+        //Finalization.Experiment();
       
         //new ResetEventTest<AutoResetEvent>().Test(new AutoResetEvent(false));
         //new ResetEventTest<ManualResetEvent>().Test(new ManualResetEvent(false));

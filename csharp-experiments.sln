@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-experiments", "csharp-experiments.csproj", "{54587279-03E3-4C71-B85B-9D2179B36423}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deilycode-sources", "deilycode-sources.csproj", "{54587279-03E3-4C71-B85B-9D2179B36423}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +13,9 @@ Global
 		{54587279-03E3-4C71-B85B-9D2179B36423}.Debug|x86.Build.0 = Debug|x86
 		{54587279-03E3-4C71-B85B-9D2179B36423}.Release|x86.ActiveCfg = Release|x86
 		{54587279-03E3-4C71-B85B-9D2179B36423}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = deilycode-sources.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
