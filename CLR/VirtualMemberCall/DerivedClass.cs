@@ -17,6 +17,6 @@ namespace deilycode.CLR.VirtualMemberCall
             Console.WriteLine("Hello from DerivedClass!\nCurrent time is {0}", _currentTime);
         }
 
-        private DateTime? _currentTime;
+        private DateTime? _currentTime = DateTime.MinValue;
     }
 }
